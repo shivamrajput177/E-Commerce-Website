@@ -102,7 +102,9 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
 // @route   GET /api/orders/myorders
 // @access  Private
 const getMyOrders = asyncHandler(async (req, res) => {
+  console.log(req)
   const orders = await Order.find({ user: req.user._id })
+  console.log(orders)
   res.json(orders)
 })
 
